@@ -1,0 +1,1 @@
+{{- with resources.Get (printf "icone/%s.svg" .) }}{{ .Content | safeHTML }}{{ else }}{{ errorf "Icona non trovata: %s" . }}{{ end -}}

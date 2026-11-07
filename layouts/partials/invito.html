@@ -1,0 +1,9 @@
+{{- with .Params.invito }}
+{{- $contatti := partial "pagina.html" "contatti" }}
+<section class="invito">
+  <div class="wrap">
+    <div class="invito-testo"><h2>{{ i18n "parliamone" }}</h2><p>{{ . }}</p></div>
+    {{- with $contatti }}<a class="bottone" href="{{ .RelPermalink }}">{{ i18n "scriveteci" }}</a>{{ end }}
+  </div>
+</section>
+{{- end }}

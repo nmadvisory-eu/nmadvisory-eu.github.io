@@ -1,0 +1,30 @@
+{{- $corrente := . }}
+{{- $chiave := .Params.chiave | default "" }}
+{{- $percorso := .Params.percorso | default slice }}
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="{{ site.Home.RelPermalink }}" aria-label="{{ i18n "tornaHome" }}"><img src="{{ "img/logo.png" | relURL }}" alt="OPINT" width="520" height="153"></a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">{{ i18n "menu" }}</button>
+    <nav class="nav" id="nav" aria-label="{{ i18n "menuPrincipale" }}">
+      {{- range slice "cosa-facciamo" "come-lavoriamo" "chi-siamo" }}
+      {{- with partial "pagina.html" . }}
+      <a href="{{ .RelPermalink }}"{{ if eq $chiave .Params.chiave }} aria-current="page"{{ else if in $percorso .Params.chiave }} class="attiva"{{ end }}>{{ .Title }}</a>
+      {{- end }}
+      {{- end }}
+      {{- with partial "pagina.html" "contatti" }}
+      <a href="{{ .RelPermalink }}" class="cta-nav"{{ if eq $chiave "contatti" }} aria-current="page"{{ end }}>{{ i18n "parliamone" }}</a>
+      {{- end }}
+      <span class="lingua" aria-label="{{ i18n "lingua" }}">
+        {{- range $i, $s := hugo.Sites }}{{ $l := $s.Language }}
+        {{- if gt $i 0 }} | {{ end }}
+        {{- if eq $l.Lang $corrente.Language.Lang }}<strong>{{ $l.Label }}</strong>
+        {{- else }}
+        {{- $dest := false }}
+        {{- range $corrente.Translations }}{{ if eq .Language.Lang $l.Lang }}{{ $dest = .RelPermalink }}{{ end }}{{ end }}
+        {{- if $dest }}<a href="{{ $dest }}" hreflang="{{ $l.Lang }}" lang="{{ $l.Lang }}">{{ $l.Label }}</a>{{ else }}<span>{{ $l.Label }}</span>{{ end }}
+        {{- end }}
+        {{- end }}
+      </span>
+    </nav>
+  </div>
+</header>

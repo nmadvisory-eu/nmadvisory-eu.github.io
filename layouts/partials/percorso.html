@@ -1,0 +1,8 @@
+{{- with .Params.percorso }}
+<nav class="percorso" aria-label="{{ i18n "percorso" }}">
+  <ol>
+    {{- range . }}{{ with partial "pagina.html" . }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}{{ end }}
+    <li aria-current="page">{{ $.Title }}</li>
+  </ol>
+</nav>
+{{- end }}

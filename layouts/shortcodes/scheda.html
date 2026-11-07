@@ -1,0 +1,3 @@
+{{- with .Get "link" }}<a class="scheda" href="{{ partial "link.html" . }}">{{ else }}<div class="scheda">{{ end -}}
+{{ partial "icona.html" (.Get "icona") }}<h3>{{ .Get "titolo" }}</h3><p>{{ .Inner | .Page.RenderString }}</p>
+{{- if .Get "link" }}</a>{{ else }}</div>{{ end }}

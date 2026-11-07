@@ -1,0 +1,2 @@
+{{- /* Collegamento interno scritto come "/pagina/": lo adatta all'indirizzo base del sito */ -}}
+{{- if strings.HasPrefix . "/" }}{{ return (strings.TrimPrefix "/" . | relURL) }}{{ else }}{{ return . }}{{ end -}}

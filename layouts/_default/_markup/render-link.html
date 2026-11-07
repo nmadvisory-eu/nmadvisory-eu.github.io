@@ -1,0 +1,5 @@
+{{- $u := urls.Parse .Destination -}}
+{{- $dest := partial "link.html" .Destination -}}
+{{- $esterno := and $u.IsAbs (ne $u.Scheme "mailto") -}}
+<a href="{{ $dest | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $esterno }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- /* fine */ -}}

@@ -1,0 +1,4 @@
+{{- /* Restituisce la pagina della lingua corrente con la chiave indicata (parametro "chiave" nel front matter) */ -}}
+{{- $p := false -}}
+{{- range where site.Pages "Params.chiave" . -}}{{- $p = . -}}{{- end -}}
+{{- return $p -}}

@@ -1,0 +1,46 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- $titolo := .Params.titolo_seo | default (printf "%s · OPINT" .Title) }}
+<title>{{ $titolo }}</title>
+{{- with .Description }}
+<meta name="description" content="{{ . }}">
+{{- end }}
+{{- if eq .Kind "404" }}
+<meta name="robots" content="noindex">
+{{- end }}
+<link rel="canonical" href="{{ .Permalink }}">
+{{- range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{- end }}
+{{- range .AllTranslations }}{{ if eq .Language.Lang "it" }}
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+{{- end }}{{ end }}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OPINT">
+<meta property="og:title" content="{{ $titolo }}">
+{{- with .Description }}
+<meta property="og:description" content="{{ . }}">
+{{- end }}
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ site.Params.immagineAnteprima | absURL }}">
+<meta property="og:locale" content="{{ if eq .Language.Lang "en" }}en_GB{{ else }}it_IT{{ end }}">
+<link rel="icon" type="image/png" href="{{ "favicon.png" | relURL }}">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+{{- $css := resources.Get "css/opint.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+<link rel="preload" href="{{ "fonts/public-sans-latin-400-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+{{- if .IsHome }}
+<script type="application/ld+json">
+{{ dict
+  "@context" "https://schema.org"
+  "@type" "ProfessionalService"
+  "name" "OPINT Advisory"
+  "url" site.Home.Permalink
+  "email" site.Params.email
+  "vatID" "IT01547860526"
+  "logo" ("img/logo.png" | absURL)
+  "address" (dict "@type" "PostalAddress" "streetAddress" "Via A. Manzoni 2" "postalCode" "20900" "addressLocality" "Monza" "addressRegion" "MB" "addressCountry" "IT")
+  "founder" (slice (dict "@type" "Person" "name" "Francesco Gulli" "sameAs" site.Params.linkedinFG) (dict "@type" "Person" "name" "Nicola Meneghetti" "sameAs" site.Params.linkedinNM))
+  | jsonify | safeJS }}
+</script>
+{{- end }}

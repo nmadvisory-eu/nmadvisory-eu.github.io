@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="{{ .Language.Lang }}">
+<head>
+{{ partial "head.html" . }}
+</head>
+<body>
+<a class="salta" href="#contenuto">{{ if eq .Language.Lang "en" }}Skip to content{{ else }}Vai al contenuto{{ end }}</a>
+{{ partial "header.html" . }}
+<main id="contenuto">
+{{ block "main" . }}{{ end }}
+</main>
+{{ partial "invito.html" . }}
+{{ partial "footer.html" . }}
+<script>
+// Menu su telefono: apre e chiude l'elenco delle voci
+(function () {
+  var b = document.getElementById("menu-btn"), n = document.getElementById("nav");
+  if (!b || !n) return;
+  b.addEventListener("click", function () {
+    var aperto = n.classList.toggle("aperto");
+    b.setAttribute("aria-expanded", aperto ? "true" : "false");
+  });
+})();
+</script>
+</body>
+</html>

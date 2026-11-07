@@ -1,0 +1,69 @@
+{{ define "main" }}
+{{- $p := .Params }}
+<section class="apertura">
+  <div class="wrap">
+    <div class="apertura-testo">
+      <h1>{{ $p.titolo }}</h1>
+      <p class="lead">{{ $p.lead }}</p>
+      {{- with $p.per_chi }}
+      <div class="per-chi">
+        <h2>{{ .titolo }}</h2>
+        <p>{{ .testo }}</p>
+      </div>
+      {{- end }}
+    </div>
+    {{- with $p.situazioni }}
+    <div class="situazioni">
+      <h2>{{ .titolo }}</h2>
+      <ul>
+        {{- range .voci }}
+        <li><a href="{{ partial "link.html" .link }}"><span class="sit-testo">{{ .testo }}</span><span class="sit-dove">{{ .area }}</span><span class="sit-freccia" aria-hidden="true">→</span></a></li>
+        {{- end }}
+      </ul>
+    </div>
+    {{- end }}
+  </div>
+</section>
+
+{{- with $p.aree }}
+<section class="sezione azzurra">
+  <div class="wrap">
+    <div class="sezione-titolo"><h2>{{ .titolo }}</h2></div>
+    <div class="schede">
+      {{- range .voci }}
+      <a class="scheda" href="{{ partial "link.html" .link }}">{{ partial "icona.html" .icona }}<h3>{{ .titolo }}</h3><p>{{ .testo }}</p></a>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+
+{{- with $p.motivi }}
+<section class="sezione">
+  <div class="wrap">
+    <div class="sezione-titolo"><h2>{{ .titolo }}</h2></div>
+    <div class="tre">
+      {{- range .voci }}
+      <div class="motivo">{{ partial "icona.html" .icona }}<h3>{{ .titolo }}</h3><p>{{ .testo }}</p></div>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+
+{{- with $p.soci }}
+<section class="sezione azzurra">
+  <div class="wrap">
+    <div class="sezione-titolo"><h2>{{ .titolo }}</h2></div>
+    <div class="soci">
+      {{- range .voci }}
+      <div class="socio-breve"><img src="{{ printf "img/%s" .foto | relURL }}" alt="{{ .nome }}" width="320" height="320" loading="lazy"><div class="socio-breve-testo"><h3>{{ .nome }}</h3><p>{{ .testo }}</p></div></div>
+      {{- end }}
+    </div>
+    {{- with partial "pagina.html" "chi-siamo" }}
+    <p class="link-sezione"><a href="{{ .RelPermalink }}">{{ i18n "conoscerci" }}</a></p>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
+{{ end }}

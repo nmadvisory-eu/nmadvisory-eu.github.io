@@ -1,0 +1,19 @@
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <a class="logo" href="{{ site.Home.RelPermalink }}" aria-label="{{ i18n "tornaHome" }}"><img src="{{ "img/logo.png" | relURL }}" alt="OPINT" width="520" height="153" loading="lazy"></a>
+      <div class="footer-dati">
+        {{- $d := split site.Params.datiLegali " - P.IVA: " }}
+        <p><span class="nobr">{{ index $d 0 }}</span> - <span class="nobr">P.IVA: {{ index $d 1 }}</span></p>
+        <p><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
+      </div>
+    </div>
+    <div class="footer-link">
+      <a href="{{ site.Params.linkedinFG }}" target="_blank" rel="noopener">{{ i18n "linkedinFG" }}</a>
+      <a href="{{ site.Params.linkedinNM }}" target="_blank" rel="noopener">{{ i18n "linkedinNM" }}</a>
+      {{- with partial "pagina.html" "note-legali" }}
+      <a href="{{ .RelPermalink }}">{{ i18n "noteLegali" }}</a>
+      {{- end }}
+    </div>
+  </div>
+</footer>

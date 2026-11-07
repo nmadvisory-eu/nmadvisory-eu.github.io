@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="intestazione-pagina">
+  <div class="wrap">
+    {{ partial "percorso.html" . }}
+    <h1>{{ .Params.titolo | default .Title }}</h1>
+    {{- with .Params.lead }}
+    <p class="lead">{{ . | $.Page.RenderString }}</p>
+    {{- end }}
+  </div>
+</section>
+<section class="sezione corpo">
+  <div class="wrap contenuto{{ with .Params.classe }} {{ . }}{{ end }}">
+    {{ .Content }}
+  </div>
+</section>
+{{ end }}

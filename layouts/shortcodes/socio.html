@@ -1,0 +1,4 @@
+<div class="socio">
+  <div class="socio-foto"><img src="{{ printf "img/%s" (.Get "foto") | relURL }}" alt="{{ .Get "nome" }}" width="320" height="320" loading="lazy"></div>
+  <div class="socio-testo"><h2>{{ .Get "nome" }}</h2>{{ .Inner | .Page.RenderString (dict "display" "block") }}</div>
+</div>

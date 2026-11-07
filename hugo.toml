@@ -1,0 +1,34 @@
+# Configurazione del sito opint.eu (Hugo)
+# L'indirizzo finale è opint.eu; durante la prova GitHub lo sostituisce con l'indirizzo provvisorio
+baseURL = "https://opint.eu/"
+title = "OPINT"
+defaultContentLanguage = "it"
+defaultContentLanguageInSubdir = false
+disableKinds = ["taxonomy", "term", "rss"]
+enableRobotsTXT = true
+# niente servizi esterni: nessuna statistica, nessun cookie
+disableHugoGeneratorInject = true
+
+[languages]
+  [languages.it]
+    label = "IT"
+    locale = "it-IT"
+    weight = 1
+  [languages.en]
+    label = "EN"
+    locale = "en-GB"
+    weight = 2
+
+[params]
+  # dati legali: esattamente come concordato
+  datiLegali = "OPINT Advisory - Sede: Via A. Manzoni 2, 20900 Monza MB Italy - P.IVA: IT01547860526"
+  email = "info@opint.eu"
+  linkedinFG = "https://www.linkedin.com/in/francescogulli1963"
+  linkedinNM = "https://www.linkedin.com/in/nicolameneghetti"
+  immagineAnteprima = "img/opint-anteprima.jpg"
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[sitemap]
+  changeFreq = "monthly"
