@@ -17,7 +17,7 @@ invito: "Volete capire dove si disperde il vostro valore? Partiamo da una conver
 - Le funzioni di supporto crescono più del business
 - Logistica e distribuzione costano troppo, o servono male i clienti
 - State valutando centri servizi condivisi o esternalizzazioni
-- Dopo anni di crescita, nessuno ha più la visione d'insieme
+- Dopo anni di crescita, nessuno ha più la visione d'insieme.
 {{< /spunta >}}
 
 ## Su quali leve lavoriamo?
