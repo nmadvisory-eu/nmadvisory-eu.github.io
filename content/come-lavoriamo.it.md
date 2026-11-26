@@ -14,11 +14,11 @@ OPINT sta per Operating Intelligence. Non ci occupiamo di strategia in modo gene
 
 ## Come si comincia?
 
-Con una conversazione breve, per capire la vostra situazione. Poi, di solito, con uno di questi tre primi passi, ciascuno con perimetro, calendario e risultati definiti all'inizio:
+Con una conversazione breve, per capire la vostra situazione. Poi, in funzione delle priorità, valutiamo insieme un possibile primo passo, ad esempio tra i seguenti, ciascuno con perimetro, calendario e risultati definiti all'inizio:
 
 {{< schede >}}
 {{< scheda icona="treestructure" titolo="Diagnostica dei processi" link="/diagnostica-processi/" >}}In poche settimane, una base di fatti condivisa su processi, costi, organizzazione e sistemi{{< /scheda >}}
-{{< scheda icona="coins" titolo="Analisi dei costi indiretti" link="/costi-indiretti/" >}}Le opportunità di risparmio su telecomunicazioni, IT, servizi e materiali, basate su fabbisogni e dati reali{{< /scheda >}}
+{{< scheda icona="coins" titolo="Analisi dei costi indiretti" link="/costi-indiretti/" >}}Troviamo opportunità di riduzione costi su molte categorie di spesa specialistiche, basate su fabbisogni e dati reali{{< /scheda >}}
 {{< scheda icona="arrowsmerge" titolo="Due diligence operativa e IT" link="/trasformazione-crescita/post-ma-carve-out/" >}}Prima di un'acquisizione: sistemi, processi, contratti, rischi e costi nascosti{{< /scheda >}}
 {{< /schede >}}
 
