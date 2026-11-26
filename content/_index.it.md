@@ -72,7 +72,7 @@ soci:
   voci:
     - nome: "Francesco Gulli"
       foto: "gulli3.jpg"
-      testo: "Trent'anni in ruoli di vertice nelle life sciences, tra Ciba Vision, Novartis e Sandoz. Crescita, organizzazioni commerciali, carve-out e ristrutturazioni."
+      testo: "Trent'anni in ruoli di vertice nelle life sciences, tra Ciba Vision, Novartis e Sandoz. Crescita, organizzazioni commerciali, carve-out e ristrutturazioni. Ha guidato organizzazioni fino a 3.000 persone, comprendenti ricerca e sviluppo globale, produzione e funzioni commerciali."
     - nome: "Nicola Meneghetti"
       foto: "nm5.jpg"
       testo: "Direttore IT e Processi in Nestlé Purina Sud Europa e in Synlab Italia. Senior consultant e project manager in aziende di consulenza multinazionali. Lunga esperienza in progetti e trasformazioni  complesse, tra cui integrazioni M&A, ottimizzazioni processi e costi, strategie IT. "
