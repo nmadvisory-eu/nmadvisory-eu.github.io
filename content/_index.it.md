@@ -75,6 +75,6 @@ soci:
       testo: "Trent'anni in ruoli di vertice nelle life sciences, tra Ciba Vision, Novartis e Sandoz. Crescita, organizzazioni commerciali, carve-out e ristrutturazioni."
     - nome: "Nicola Meneghetti"
       foto: "nm5.jpg"
-      testo: "Consulenza in Accenture, Capgemini e Deloitte, poi la direzione dei sistemi informativi in Nestlé Purina e Synlab. Integrazioni dopo le acquisizioni, processi, scelta dei sistemi, costi."
+      testo: "Direttore IT e Processi in Nestlé Purina Sud Europa e in Synlab Italia. Senior consultant e project manager in aziende di consulenza multinazionali. Lunga esperienza in progetti e trasformazioni  complesse, tra cui integrazioni M&A, ottimizzazioni processi e costi, strategie IT. "
 invito: "Raccontateci la vostra situazione. Una prima conversazione, breve, serve a capire se e dove possiamo essere utili."
 ---
