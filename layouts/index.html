@@ -57,7 +57,7 @@
     <div class="sezione-titolo"><h2>{{ .titolo }}</h2></div>
     <div class="soci">
       {{- range .voci }}
-      <div class="socio-breve"><img src="{{ printf "img/%s" .foto | relURL }}" alt="{{ .nome }}" width="320" height="320" loading="lazy"><div class="socio-breve-testo"><h3>{{ .nome }}</h3><p>{{ .testo }}</p></div></div>
+      <div class="socio-breve"><img src="{{ printf "img/%s" .foto | relURL }}" alt="{{ .nome }}" width="450" height="450" loading="lazy"><div class="socio-breve-testo"><h3>{{ .nome }}</h3><p>{{ .testo }}</p></div></div>
       {{- end }}
     </div>
     {{- with partial "pagina.html" "chi-siamo" }}
